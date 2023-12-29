@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+string accinfo[100][3];
+int i=0;
+string searchid;
+void giveData()
+{
+   string accname,accid,accmoney;
+   cout<< "Enter your Account name: "<<endl;
+   cin>>accname;
+   cout<< "Enter your Account ID: " <<endl;
+   cin>>accid;
+   cout<< "Enter your Account money: " <<endl;
+   cin>>accmoney;
+   accinfo[i][0]=accname;
+   accinfo[i][1]=accid;
+   accinfo[i][2]=accmoney;
+   i=i+1;
+   char choice;
+    cout<< "Enter Y to add more or Enter N to End" <<endl;
+    cin>>choice;
+    if (choice=='Y'||choice=='y')
+    {
+        giveData();
+    }
+    else
+        {
+        cout<< "End" <<endl;
+    }
+}
+
+int finddata()
+{
+  cout<< "Enter your Desired ID: " <<endl;
+  cin>>searchid;
+}
+int printdata(){
+  for (int i=0; i<100; i++)
+  {
+      if(accinfo[i][1]==searchid)
+      {
+
+      cout<< "Name: " <<accinfo[i][0] <<endl;
+      cout<< "ID: " <<accinfo[i][1] <<endl;
+      cout<< "Money: " <<accinfo[i][2]<<endl;
+return i;
+  }
+  }
+
+}
+int main ()
+{
+    giveData();
+    finddata();
+    printdata();
+}
