@@ -1,0 +1,95 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+    int accnum;
+    int total;
+    string name;
+    int wamount;
+   int oprt;
+   int balance;
+   int balance2;
+   int input;
+
+    cout<< "Enter your account name: " ;
+    cin>>name;
+    cout<< "Enter your account number: " ;
+    cin>>accnum;
+    cout<< "Enter your starting amount(Total): " ;
+    cin>>total;
+    bool var= true;
+    while(var==true)
+    {
+    cout<< "User Menu: " <<endl;
+    cout<< "1. Withdraw Money " <<endl;
+    cout<< "2. Input Money " <<endl;
+    cout<< "3. View account details " <<endl;
+    cout<< "4. Close the menu and exit " <<endl;
+    cout<< "Enter your operation: ";
+    cin>>oprt;
+
+   switch (oprt)
+   {
+       case 1:
+        {
+       cout<<"Enter the amount to withdraw: ";
+       cin>>wamount;
+        if(total>wamount)
+            {
+        balance= total-wamount;
+       cout<< "Your current balance " <<balance <<endl;
+        break;
+        }
+
+        else{
+ cout<<"Your balance is not sufficient"  <<endl;
+            var=false;
+            break;
+            if(balance==0)
+        {
+            cout<<"Your balance is zero" <<endl;
+
+        }
+        }
+        break;
+        }
+       case 2:
+        {
+            cout<< "Enter your input amount: " ;
+            cin>> input;
+            balance2= total+input;
+            if (input>1000)
+            {
+                cout<< "Your input amount is exceeding 1000" <<endl;
+                break;
+                var=false;
+            }
+            else
+            {
+                cout<<"Your current balance is " <<balance2 <<endl;
+            }
+                if (balance>=10000)
+                {
+                    cout<< "Your balance is over 10000" <<endl;
+                    break;
+                }
+            }
+       case 3:
+        {
+            cout<<"Your account name: " <<name <<endl;
+            cout<<"Your account number: " <<accnum <<endl;
+            cout<<"Your total amount: " <<total <<endl;
+
+            var=false;
+            break;
+
+        }
+       case 4:
+        {
+        cout<< "Menu is turning off" <<endl;
+            var=false;
+        }
+        }
+   }
+return 0;
+}
